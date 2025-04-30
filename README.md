@@ -1,25 +1,37 @@
 # Restaurant Page
 Built as part of The Odin Project's curriculum.
 
-Live server link: https://gilmarmourajr.github.io/restaurant-page/
+Live server link: add link here
 
-**Description:** Designed and created a web page for a restaurant. The website has no native HTML, and is entirely generated in Javascript, using webpacks. This project was made to learn more about webpacks and module programming.
+**Description:** add description here
 
 # Instructions
 These Instructions are taken directly from The Odin Project website.
 
 <ol>
-  <li>Start the project the same way you began the webpack tutorial project, by creating the package.json file and setting up Webpack.</li>
-  <ul>
-    <li>Remember, you only need to install and configure the things you need for your project. For example, if you do not plan to have local image files linked in your HTML template, you will not need to install and configure html-loader.</li>
-  </ul>
-  <li>Create a .gitignore file in the root of your project. It should contain the text node_modules and dist on separate lines.</li>
-  <li>Set up an HTML skeleton inside of src/template.html. Inside the body, add a <header> element that contains a nav with buttons (not links!) for different “tabs” (for example buttons for “Home”, “Menu” or “About” etc). Below the header, add a single div id="content".</li>
-  <li>Inside of src/index.js write a console.log or alert statement and then run npx webpack serve. Open http://localhost:8080 in your browser and check your JavaScript is running.</li>
-  <li>Inside div#content, create a homepage for your restaurant. You might want to include an image, headline, and some text about how wonderful the restaurant is; you do not have to make this look too fancy. It’s okay to hard-code these into the HTML for now just to see how they look on the page.</li>
-  <li>Now remove everything inside div#content from the HTML (so you still have the <header> and <nav> with an empty <div id="content"> below it) and instead create them by using JavaScript only, e.g. by appending each new element to div#content once the page is first loaded. Since we’re all set up to write our code in multiple files, let’s write this initial page-load function inside of its own module and then import and call it inside of index.js.</li>
-  <li>Next, set up your restaurant site to use tabbed browsing to access the Menu and Contact pages. Look at the behavior of this student’s live preview site for visual inspiration.</li>
-  <ol>
-    <li>Put the contents of each “tab” inside of its own module. Each module will export a function that creates a div element, adds the appropriate content and styles to that element and then appends it to the DOM.</li>
-    <li>Write the tab-switching logic inside of index.js. You should have event listeners for each button in the header navbar that wipes out the current contents of div#content and then runs the correct ‘tab module’ to populate it with the new contents again.</li>
+  <li>Your ‘todos’ are going to be objects that you’ll want to dynamically create, which means either using factories or constructors/classes to generate them.</li>
+  <li>Brainstorm what kind of properties your todo-items are going to have. At a minimum they should have a title, description, dueDate and priority. You might also want to include notes or even a checklist.</li>
+  <li>Your todo list should have projects or separate lists of todos. When a user first opens the app, there should be some sort of ‘default’ project to which all of their todos are put. Users should be able to create new projects and choose which project their todos go into.</li>
+  <li>You should separate your application logic (i.e. creating new todos, setting todos as complete, changing todo priority etc.) from the DOM-related stuff, so keep all of those things in separate modules.</li>
+  <ol>The look of the User Interface is up to you, but it should be able to do the following:
+    <li>View all projects.</li>
+    <li>View all todos in each project (probably just the title and due date… perhaps changing color for different priorities).</li>
+    <li>Expand a single todo to see/edit its details.</li>
+    <li>Delete a todo.</li>
   </ol>
+  <ol>For inspiration, check out the following great todo apps. (look at screenshots, watch their introduction videos etc.)
+    <li>Todoist</li>
+    <li>Things</li>
+    <li>any.do</li>
+  </ol>
+  <ol>Since you are probably already using webpack, adding external libraries from npm is a cinch! You might want to consider using the following useful library in your code:
+    <li>date-fns gives you a bunch of handy functions for formatting and manipulating dates and times.</li>
+  </ol>
+  <ol>We haven’t learned any techniques for actually storing our data anywhere, so when the user refreshes the page, all of their todos will disappear! You should add some persistence to this todo app using the Web Storage API.
+    <ul>localStorage allows you to save data on the user’s computer. The downside here is that the data is ONLY accessible on the computer that it was created on. Even so, it’s pretty handy! Set up a function that saves the projects (and todos) to localStorage every time a new project (or todo) is created, and another function that looks for that data in localStorage when your app is first loaded. Additionally, here are a couple of quick tips to help you not get tripped up:
+      <li>Make sure your app doesn’t crash if the data you may want to retrieve from localStorage isn’t there!</li>
+      <li>You can inspect data you saved in localStorage using DevTools! To do this, open the Application tab in DevTools and click on the Local Storage tab under Storage. Every time you add, update and delete data from localStorage in your app, those changes will be reflected in DevTools.</li>
+      <li>localStorage uses JSON to send and store data, and when you retrieve the data, it will also be in JSON format. Keep in mind you cannot store functions in JSON, so you’ll have to figure out how to add methods back to your object properties once you fetch them. Good luck!</li>
+    </ul>
+  </ol>
+</ol>
